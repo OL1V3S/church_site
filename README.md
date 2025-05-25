@@ -1,12 +1,27 @@
-# React + Vite
+# Iglesia Templo Bautista – Church Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A bilingual (English/Spanish) website built with **React** and **Vite** for Iglesia Templo Bautista. This site provides basic information about the church, service hours, doctrine, and contact options.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+- Bilingual toggle (English / Español)
+- Clean, responsive layout
+- Styled with custom fonts
+
+---
+
+## Built With
+
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) 
+- [React Router](https://reactrouter.com/)
+- [Git + GitHub](https://github.com/)
+
+---
+
+### Website by Oliver Triana, project for Iglesia Templo Bautista
+
