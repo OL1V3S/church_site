@@ -1,0 +1,65 @@
+/* === Global Styles === */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #DBDBDB; /* light gray background */
+  color: #000000;
+}
+
+/* === Navbar === */
+nav {
+  background-color: #18243a; /* navy */
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Nav links (default) */
+.nav-link {
+  color: white;
+  text-decoration: none;
+  margin: 0 0.75rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Active nav link (pill style) */
+.nav-link.active {
+  background-color: #A0FFD1; /* light mint */
+  color: #18243a; /* navy text */
+  font-weight: bold;
+}
+
+/* Hover effect for all nav links */
+.nav-link:hover {
+  background-color: #ffffff22; /* subtle light hover effect */
+  text-decoration: none;
+}
+
+/* === Page Content === */
+.page {
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Container for text sections */
+.container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #889bae; /* soft blue-gray */
+  border-radius: 8px;
+}
+
+
+
+/* Optional: Card style */
+.card {
+  padding: 2em;
+}
+
+/* Optional: Footer or note */
+.read-the-docs {
+  color: #888;
+}
