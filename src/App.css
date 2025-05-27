@@ -1,5 +1,3 @@
-
-
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -55,5 +53,39 @@
   font-weight: bold;
 }
 
+/* --- MOBILE NAVIGATION --- */
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
 
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
+}

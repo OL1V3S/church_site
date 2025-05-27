@@ -2,13 +2,18 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #DBDBDB; /* light gray background */
+  background-color: #DBDBDB;
   color: #000000;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* === Navbar === */
 nav {
-  background-color: #18243a; /* navy */
+  background-color: #18243a;
   padding: 1rem;
   text-align: center;
 }
@@ -24,16 +29,14 @@ nav {
   transition: all 0.3s ease;
 }
 
-/* Active nav link (pill style) */
 .nav-link.active {
-  background-color: #A0FFD1; /* light mint */
-  color: #18243a; /* navy text */
+  background-color: #A0FFD1;
+  color: #18243a;
   font-weight: bold;
 }
 
-/* Hover effect for all nav links */
 .nav-link:hover {
-  background-color: #ffffff22; /* subtle light hover effect */
+  background-color: #ffffff22;
   text-decoration: none;
 }
 
@@ -43,23 +46,81 @@ nav {
   text-align: center;
 }
 
-/* Container for text sections */
 .container {
   max-width: 700px;
   margin: 2rem auto;
   padding: 2rem;
-  background-color: #889bae; /* soft blue-gray */
+  background-color: #889bae;
   border-radius: 8px;
 }
 
-
-
-/* Optional: Card style */
 .card {
   padding: 2em;
 }
 
-/* Optional: Footer or note */
 .read-the-docs {
   color: #888;
+}
+
+/* === Hamburger Menu === */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+/* === Mobile Styles === */
+@media screen and (max-width: 768px) {
+  nav {
+    padding: 0.75rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .page {
+    padding: 1rem;
+  }
+
+  .container {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
 }

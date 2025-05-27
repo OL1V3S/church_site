@@ -33,7 +33,7 @@ export default function Home({ lang }) {
           }}
         />
         <img
-          src="/pictures/logo1.png"
+          src="/pictures/logo.png"
           alt="Church Logo"
           style={{
             objectFit: "cover",
@@ -81,7 +81,7 @@ export default function Home({ lang }) {
         <div style={{ color: "black", fontFamily: "American Typewriter", fontSize: "1.5rem", lineHeight: "1.6", textAlign: "center" }}>
             {lang === "en"
                 ? "We are an old-fashioned Independent Baptist Church. We sing the old-time hymns and preach out of the King James Bible exclusively, believing it to be the Word of God. We are not contemporary in our worship, we are not Calvinistic in our doctrine. We strive to be a lighthouse proclaiming the Gospel of Jesus Christ both locally and abroad."
-                : "Somos una iglesia Bautista Independiente de la antigua escuela. Cantamos himnos tradicionales y predicamos exclusivamente de la Biblia Reina-Valera 1960, creyendo que es la Palabra de Dios. No somos contemporáneos en nuestra adoración, ni somos calvinistas en nuestra doctrina. Nos esforzamos por ser un faro que proclame el Evangelio de Jesucristo tanto localmente como en el extranjero."
+                : "Somos una iglesia Bautista Independiente. Cantamos himnos tradicionales y predicamos exclusivamente de la Biblia Reina-Valera 1960, creyendo que es la Palabra de Dios. No somos contemporáneos en nuestra adoración, ni somos calvinistas en nuestra doctrina. Nos esforzamos por ser un faro que proclame el Evangelio de Jesucristo tanto localmente como en el extranjero."
             }
             </div>
 
@@ -103,6 +103,89 @@ export default function Home({ lang }) {
                 >
                 {lang === "en" ? "Our Doctrine" : "Nuestra Doctrina"}
                 </button>
+
+                {/* Clock Picture and Hours */}
+                <div style={{ display: "flex", alignItems: "flex-start", gap: "1rem", marginTop: "2rem" }}>
+                    <img
+                        src="/pictures/clock.png"
+                        alt="Clock"
+                        style={{ width: "200px", height: "200px", marginTop: "6px" }}
+                    />
+
+                    <div style={{ textAlign: "left", fontSize: "2rem", color: "#18243a", fontFamily: "American Typewriter" }}>
+                        <div style={{ fontWeight: "bold", fontSize: "3.1rem" }}>
+                        {lang === "en" ? "Service Hours:" : "Horas de Servicio:"}
+                        </div>
+
+                        <div style={{ marginTop: ".01rem" }}>
+                        <strong>{lang === "en" ? "Sunday" : "Domingo"}</strong>
+                        <div> {lang === "en" ? "Sunday School" : "Escuela Dominical"} - 10:00am</div>
+                        <div> {lang === "en" ? "Sunday Morning" : "Predicacion"} - 11:00am</div>
+                        <div> {lang === "en" ? "Evening Service" : "Predicacion"} – 6:00pm</div>
+                        </div>
+
+                        <div style={{ marginTop: "1rem" }}>
+                        <strong>{lang === "en" ? "Wednesday" : "Miércoles"}</strong>
+                        <div> {lang === "en" ? "Bible Study" : "Estudio Bíblico"} - 6:00pm</div>
+                        </div>
+
+                        <div style={{ marginTop: "1rem" }}>
+                        <strong>{lang === "en" ? "Thursday" : "Jueves"}</strong>
+                        <div> {lang === "en" ? "Prayer Meeting" : "Oración"} - 6:00pm</div>
+                        </div>
+
+                        <div style={{ marginTop: "1rem" }}>
+                        <strong>{lang === "en" ? "Saturday" : "Sabado"}</strong>
+                        <div> {lang === "en" ? "Youth Group" : "Reunion de Jovenes"} - 5:00pm</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                {/* Location */}
+                <div
+                    style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        marginTop: "2rem",
+                        gap: "1rem",
+                    }}
+                    >
+                    <img
+                        src="/pictures/location.png"
+                        alt="Clock"
+                        style={{
+                        width: "200px",
+                        height: "200px",
+                        }}
+                    />
+
+                    <div style = {{textAlign: "left"}}>
+                        <div style={{ fontFamily: "American Typewriter", fontSize: "3.1rem", color: "#18243a" }}>
+                            <strong>{lang === "en" ? "Our Location:" : "Nuestra Locacion:"}</strong>
+                            <br />
+                            
+                        </div>
+
+                        <div style={{ fontFamily: "American Typewriter", fontSize: "2.1rem", color: "#18243a" }}>
+                            {lang === "en" ? (
+                            <>
+                                804 S. 14th Ave <br />
+                                Dodge City, KS 67801 <br />
+                                620-255-3740
+                            </>
+                            ) : (
+                            <>
+                                804 S. 14th Ave <br />
+                                Dodge City, KS 67801 <br />
+                                620-255-3740
+                            </>
+                            )}
+                        </div>
+                    </div> 
+                </div>
+
 
 
       </div>

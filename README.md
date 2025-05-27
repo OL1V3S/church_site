@@ -25,3 +25,13 @@ A bilingual (English/Spanish) website built with **React** and **Vite** for Igle
 
 ### Website by Oliver Triana, project for Iglesia Templo Bautista
 
+## Icon Credits
+
+- Clock icon by <a href="https://www.flaticon.com/free-icons/clock" title="clock icons">Clock icons created by Those Icons - Flaticon</a>
+
+- Location icon by [Freepik](https://www.flaticon.com/free-icons/location) from [Flaticon](https://www.flaticon.com/)
+
+- Appointment icon by Smashicons "https://www.flaticon.com/free-icon/appointment_16923800?term=events&page=1&position=56&origin=search&related_id=16923800/"
+
+
+
