@@ -1,14 +1,18 @@
 import { useState } from "react";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
   NavLink,
 } from "react-router-dom";
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Event from "./pages/Event";
 import Staff from "./pages/Staff";
+import Gospel from "./pages/Gospel";
+import GospelInvite from "./components/HeavenPrompt";
+
 
 export default function App() {
   const [language, setLanguage] = useState("en");
@@ -77,7 +81,10 @@ export default function App() {
         <Route path="/about" element={<About lang={language} />} />
         <Route path="/staff" element={<Staff lang={language} />} />
         <Route path="/event" element={<Event lang={language} />} />
+        <Route path="/gospel" element={<Gospel lang={language} />} />
       </Routes>
+
+      <GospelInvite lang={language} />
     </Router>
   );
 }

@@ -1,35 +1,33 @@
+import churchImg from "../assets/church.png"; // adjust path as needed
+
 export default function Staff({ lang }) {
   const staffList = {
     en: [
       {
         name: "Eusebio Santana",
         title: "Pastor",
-        image: "/pictures/church.png",
-        description:
-          "Description",
+        image: churchImg,
+        description: "Pastor Santana has pastored Iglesia Templo Bautista since Month of Year. Before becoming the pastor, he served at Iglesia El Peregrino for years. He and his wife Rosa have been married since Month of Year.",
       },
       {
         name: "Jhonny Santana",
         title: "Youth Pastor",
-        image: "/pictures/church.png",
-        description:
-          "Description",
+        image: churchImg,
+        description: "Brother Jhonny has served as the youth pastor at Iglesia Templo Bautista since Month of Year. He is a graduate of Hyles-Anderson College and oversees the youth ministry and other areas of service within the church.",
       },
     ],
     es: [
       {
         name: "Eusebio Santana",
         title: "Pastor",
-        image: "/pictures/church.png",
-        description:
-          "Descripcion",
+        image: churchImg,
+        description: "El Pastor Santana ha pastoreado la Iglesia Templo Bautista desde Mes de Año. Antes de ser pastor, sirvió en la Iglesia El Peregrino por años. El y su esposa Rosa han estado casados desde Mes de Año",
       },
       {
         name: "Jhonny Santana",
         title: "Pastor de Jovenes",
-        image: "/pictures/church.png",
-        description:
-        "Descripcion",
+        image: churchImg,
+        description: "El Hermano Jhonny Santana ha servido como pastor de jóvenes en la Iglesia Templo Bautista desde Mes de Año. Es graduado de Hyles-Anderson College y dirige el ministerio de jóvenes y otras áreas de servicio dentro de la iglesia.",
       },
     ],
   };
@@ -75,7 +73,7 @@ export default function Staff({ lang }) {
           />
           <div
             style={{
-              fontFamily: "Georgia",
+              fontFamily: "American Typewriter",
               fontSize: "1.2rem",
               lineHeight: "1.6",
               color: "#18243a",

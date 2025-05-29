@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function About({ lang }) {
   const content = {
     en: {
@@ -23,11 +25,7 @@ export default function About({ lang }) {
   };
 
   return (
-
-    
     <div
-
-    
       style={{
         maxWidth: "800px",
         margin: "2rem auto",
@@ -37,11 +35,9 @@ export default function About({ lang }) {
         textAlign: "center"
       }}
     >
-      
       {/* Title */}
       <div
         style={{
-          textAlign: "center",
           marginBottom: "1.5rem",
           color: "#18243a",
           fontFamily: "American Typewriter",
@@ -68,4 +64,4 @@ export default function About({ lang }) {
       </div>
     </div>
   );
-} 
+}
