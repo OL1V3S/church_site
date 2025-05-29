@@ -85,7 +85,7 @@ export default function Event({ lang }) {
           <div>{lang === "en" ? "Men's Banquet: December 13" : "Banquete de Hombres: Diciembre 13"}</div>
           <div>{lang === "en" ? "Teen Banquet: December 19" : "Banquete Juvenil: Diciembre 19"}</div>
           <div>{lang === "en" ? "Women's Banquet: December 20" : "Banquete de Mujeres: Diciembre 20"}</div>
-          <div>{lang === "en" ? "Christmas Service: December 21" : "Servicio Navideoñ: Diciembre 21"}</div>
+          <div>{lang === "en" ? "Christmas Service: December 21" : "Servicio Navideño: Diciembre 21"}</div>
           <div>{lang === "en" ? "New Year's Service: December 31" : "Servicio de Año Nuevo: Diciembre 31"}</div>
         </div>
       </div>
