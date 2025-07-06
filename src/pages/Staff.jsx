@@ -1,4 +1,5 @@
-import churchImg from "../assets/church.png"; // adjust path as needed
+import youthPastor from "../assets/youthPastor.png";
+import pastor from "../assets/pastor.png";
 
 export default function Staff({ lang }) {
   const staffList = {
@@ -6,13 +7,13 @@ export default function Staff({ lang }) {
       {
         name: "Eusebio Santana",
         title: "Pastor",
-        image: churchImg,
+        image: pastor,
         description: "Pastor Santana has pastored Iglesia Templo Bautista since Month of Year. Before becoming the pastor, he served at Iglesia El Peregrino for years. He and his wife Rosa have been married since Month of Year.",
       },
       {
         name: "Jhonny Santana",
         title: "Youth Pastor",
-        image: churchImg,
+        image: youthPastor,
         description: "Brother Jhonny has served as the youth pastor at Iglesia Templo Bautista since Month of Year. He is a graduate of Hyles-Anderson College and oversees the youth ministry and other areas of service within the church.",
       },
     ],
@@ -20,13 +21,13 @@ export default function Staff({ lang }) {
       {
         name: "Eusebio Santana",
         title: "Pastor",
-        image: churchImg,
+        image: pastor,
         description: "El Pastor Santana ha pastoreado la Iglesia Templo Bautista desde Mes de Año. Antes de ser pastor, sirvió en la Iglesia El Peregrino por años. El y su esposa Rosa han estado casados desde Mes de Año",
       },
       {
         name: "Jhonny Santana",
         title: "Pastor de Jovenes",
-        image: churchImg,
+        image: youthPastor,
         description: "El Hermano Jhonny Santana ha servido como pastor de jóvenes en la Iglesia Templo Bautista desde Mes de Año. Es graduado de Hyles-Anderson College y dirige el ministerio de jóvenes y otras áreas de servicio dentro de la iglesia.",
       },
     ],
@@ -64,8 +65,8 @@ export default function Staff({ lang }) {
             src={person.image}
             alt={person.name}
             style={{
-              width: "200px",
-              height: "200px",
+              width: "300px",
+              height: "300px",
               objectFit: "cover",
               borderRadius: "50%",
               boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",

@@ -1,13 +1,18 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-// ✅ Image imports
+import pic1 from "../assets/homeGallery/pic1.png";
+import pic2 from "../assets/homeGallery/pic2.png";
+import pic3 from "../assets/homeGallery/pic3.png";
+import pic4 from "../assets/homeGallery/pic4.png";
+import pic5 from "../assets/homeGallery/pic5.png";
+import pic6 from "../assets/homeGallery/pic6.png";
+import sign from "../assets/homeGallery/churchSign.png";
+
 import churchImg from "../assets/church.png";
-import logoImg from "../assets/logo.png";
+import logoImg from "../assets/churchLogo1.png";
 import clockImg from "../assets/clock.png";
 import locationImg from "../assets/location.png";
-import HeavenPrompt from "../components/HeavenPrompt";
-;
 
 export default function Home({ lang }) {
   const navigate = useNavigate();
@@ -63,7 +68,7 @@ export default function Home({ lang }) {
           <div
             style={{
               color: "#889BAE",
-              fontFamily: "Brush Script MT",
+              fontFamily: "'Brush Script MT', 'Dancing Script', cursive",
               fontSize: "3rem",
               marginTop: "2rem",
             }}
@@ -109,12 +114,12 @@ export default function Home({ lang }) {
             borderRadius: "8px",
             fontSize: "2.5rem",
             fontWeight: "bold",
-            fontFamily:"American Typewriter",
+            fontFamily: "American Typewriter",
             cursor: "pointer",
             transition: "background-color 0.3s ease",
           }}
         >
-       {lang === "en" ? "Our Doctrine" : "Nuestra Doctrina"}
+          {lang === "en" ? "Our Doctrine" : "Nuestra Doctrina"}
         </button>
 
         {/* Clock Picture and Hours */}
@@ -143,28 +148,20 @@ export default function Home({ lang }) {
             <div style={{ fontWeight: "bold", fontSize: "3.1rem" }}>
               {lang === "en" ? "Service Hours:" : "Horas de Servicio:"}
             </div>
-
             <div style={{ marginTop: ".01rem" }}>
               <strong>{lang === "en" ? "Sunday" : "Domingo"}</strong>
-              <div>
-                {lang === "en"
-                  ? "Sunday School"
-                  : "Escuela Dominical"} - 10:00am
-              </div>
-              <div>{lang === "en" ? "Sunday Morning" : "Predicacion"} - 11:00am</div>
-              <div>{lang === "en" ? "Evening Service" : "Predicacion"} – 6:00pm</div>
+              <div>{lang === "en" ? "Sunday School" : "Escuela Dominical"} - 10:00am</div>
+              <div>{lang === "en" ? "Sunday Morning" : "Predicación"} - 11:00am</div>
+              <div>{lang === "en" ? "Evening Service" : "Predicación"} – 6:00pm</div>
             </div>
-
             <div style={{ marginTop: "1rem" }}>
               <strong>{lang === "en" ? "Wednesday" : "Miércoles"}</strong>
               <div>{lang === "en" ? "Bible Study" : "Estudio Bíblico"} - 6:00pm</div>
             </div>
-
             <div style={{ marginTop: "1rem" }}>
               <strong>{lang === "en" ? "Thursday" : "Jueves"}</strong>
               <div>{lang === "en" ? "Prayer Meeting" : "Oración"} - 6:00pm</div>
             </div>
-
             <div style={{ marginTop: "1rem" }}>
               <strong>{lang === "en" ? "Saturday" : "Sábado"}</strong>
               <div>{lang === "en" ? "Youth Group" : "Reunión de Jóvenes"} - 5:00pm</div>
@@ -197,9 +194,7 @@ export default function Home({ lang }) {
               }}
             >
               <strong>{lang === "en" ? "Our Location:" : "Nuestra Locación:"}</strong>
-              <br />
             </div>
-
             <div
               style={{
                 fontFamily: "American Typewriter",
@@ -215,7 +210,31 @@ export default function Home({ lang }) {
         </div>
       </div>
 
-   
+      {/* Photo Gallery */}
+      <div
+        style={{
+          overflowX: "auto",
+          whiteSpace: "nowrap",
+          padding: "1rem",
+          marginTop: "2rem",
+        }}
+      >
+        {[pic1, pic2, pic3, pic4, pic5, pic6, sign].map((src, idx) => (
+          <img
+            key={idx}
+            src={src}
+            alt={`Gallery ${idx + 1}`}
+            style={{
+              width: "500px",
+              height: "400px",
+              objectFit: "cover",
+              borderRadius: "8px",
+              marginRight: "1rem",
+              display: "inline-block",
+            }}
+          />
+        ))}
+      </div>
     </div>
   );
 }
