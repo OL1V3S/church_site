@@ -65,8 +65,8 @@ export default function Staff({ lang }) {
             src={person.image}
             alt={person.name}
             style={{
-              width: "300px",
-              height: "300px",
+              width: "200px",
+              height: "200px",
               objectFit: "cover",
               borderRadius: "50%",
               boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
