@@ -91,15 +91,15 @@ export default function Home({ lang }) {
         <div
           style={{
             color: "black",
-            fontFamily: "American Typewriter",
+            fontFamily: "Trebuchet MS",
             fontSize: "1.5rem",
             lineHeight: "1.6",
             textAlign: "center",
           }}
         >
           {lang === "en"
-            ? "We are an old-fashioned Independent Baptist Church. We sing the old-time hymns and preach out of the King James Bible exclusively, believing it to be the Word of God. We are not contemporary in our worship, we are not Calvinistic in our doctrine. We strive to be a lighthouse proclaiming the Gospel of Jesus Christ both locally and abroad."
-            : "Somos una iglesia Bautista Independiente. Cantamos himnos tradicionales y predicamos exclusivamente de la Biblia Reina-Valera 1960, creyendo que es la Palabra de Dios. No somos contemporáneos en nuestra adoración, ni somos calvinistas en nuestra doctrina. Nos esforzamos por ser un faro que proclame el Evangelio de Jesucristo tanto localmente como en el extranjero."}
+            ? "We are an old-fashioned Independent Baptist Church. We sing the old-time hymns and preach out of the King James Bible exclusively, believing it to be the Word of God. We are not contemporary in our worship. We strive to be a lighthouse proclaiming the Gospel of Jesus Christ both locally and abroad."
+            : "Somos una iglesia Bautista Independiente. Cantamos himnos tradicionales y predicamos exclusivamente de la Biblia Reina-Valera 1960, creyendo que es la Palabra de Dios. No somos contemporáneos en nuestra adoración. Nos esforzamos por ser un faro que proclame el Evangelio de Jesucristo tanto localmente como en el extranjero."}
         </div>
 
         {/* Statement of Faith Button */}
@@ -114,7 +114,7 @@ export default function Home({ lang }) {
             borderRadius: "8px",
             fontSize: "2.5rem",
             fontWeight: "bold",
-            fontFamily: "American Typewriter",
+            fontFamily: "Trebuchet MS",
             cursor: "pointer",
             transition: "background-color 0.3s ease",
           }}
@@ -142,7 +142,7 @@ export default function Home({ lang }) {
               textAlign: "left",
               fontSize: "2rem",
               color: "#18243a",
-              fontFamily: "American Typewriter",
+              fontFamily: "Trebuchet MS",
             }}
           >
             <div style={{ fontWeight: "bold", fontSize: "3.1rem" }}>

@@ -136,7 +136,7 @@ export default function Gospel({ lang }) {
             lineHeight: "1.8",
             maxWidth: "800px",
             margin: "auto",
-            fontFamily: "American Typewriter",
+            fontFamily: "Trebuchet MS",
           }}
         >
           {(verses[lang] || verses.en).map((section, idx) => (
@@ -152,8 +152,8 @@ export default function Gospel({ lang }) {
   
           <div style={{ marginTop: "2rem", fontWeight: "bold" }}>
             {lang === "en"
-              ? "Would you like to trust Christ today?"
-              : "¿Te gustaría confiar en Cristo hoy?"}
+              ? "Would you like to trust Christ today? Say this prayer:"
+              : "¿Te gustaría confiar en Cristo hoy? Di esta oracion:"}
           </div>
           <div style={{ marginTop: "1rem" }}>
             <p>

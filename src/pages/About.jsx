@@ -8,7 +8,6 @@ export default function About({ lang }) {
         "We are an old-fashioned Independent Baptist Church. We hold to the authority of Scripture, using the King James Bible exclusively in our preaching and teaching.",
         "Our worship is traditional, featuring classic hymns and reverent music that honors the Lord.",
         "We believe in the death, burial, and resurrection of Jesus Christ for the salvation of sinners by grace through faith.",
-        "We are not Calvinistic in doctrine, nor do we embrace modern, contemporary church trends.",
         "Our mission is to glorify God, edify believers, and preach the Gospel to the world — both locally and globally."
       ]
     },
@@ -18,7 +17,6 @@ export default function About({ lang }) {
         "Somos una iglesia Bautista Independiente. Sostenemos la autoridad de las Escrituras y usamos exclusivamente la Biblia Reina-Valera 1960 para predicar y enseñar.",
         "Nuestra adoración es tradicional, con himnos clásicos y música reverente que honra al Señor.",
         "Creemos en la muerte, sepultura y resurrección de Jesucristo para la salvación de los pecadores por gracia mediante la fe.",
-        "No seguimos doctrinas calvinistas ni adoptamos las tendencias modernas y contemporáneas de la iglesia.",
         "Nuestra misión es glorificar a Dios, edificar a los creyentes y predicar el Evangelio al mundo — tanto local como globalmente."
       ]
     }
@@ -52,7 +50,7 @@ export default function About({ lang }) {
       <div
         style={{
           color: "black",
-          fontFamily: "American Typewriter",
+          fontFamily: "Trebuchet MS",
           fontSize: "1.3rem",
           lineHeight: "1.8",
           textAlign: "left"

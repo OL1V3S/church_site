@@ -41,7 +41,7 @@ export default function Event({ lang }) {
         style={{
           textAlign: "center",
           color: "black",
-          fontFamily: "American Typewriter",
+          fontFamily: "Trebuchet MS",
           fontSize: "1.5rem",
           lineHeight: "1.8",
           maxWidth: "800px",
