@@ -1,5 +1,7 @@
 # Iglesia Templo Bautista – Church Website
 
+Hosted at https://templobautista.net/
+
 A bilingual (English/Spanish) website built with **React** and **Vite** for Iglesia Templo Bautista. This site provides basic information about the church, service hours, doctrine, and contact options.
 
 
