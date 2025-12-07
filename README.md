@@ -33,7 +33,7 @@ A bilingual (English/Spanish) website built with **React** and **Vite** for Igle
 
 - Location icon by [Freepik](https://www.flaticon.com/free-icons/location) from [Flaticon](https://www.flaticon.com/)
 
-- Appointment icon by Smashicons "https://www.flaticon.com/free-icon/appointment_16923800?term=events&page=1&position=56&origin=search&related_id=16923800/"
+- Appointment icon by [Smashicons](https://www.flaticon.com/free-icon/appointment_16923800?term=events&page=1&position=56&origin=search&related_id=16923800/)
 
 
 
