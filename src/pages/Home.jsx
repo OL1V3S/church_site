@@ -6,7 +6,6 @@ import pic2 from "../assets/homeGallery/pic2.png";
 import pic3 from "../assets/homeGallery/pic3.png";
 import pic4 from "../assets/homeGallery/pic4.png";
 import pic5 from "../assets/homeGallery/pic5.png";
-import pic6 from "../assets/homeGallery/pic6.png";
 import sign from "../assets/homeGallery/churchSign.png";
 
 import churchImg from "../assets/church.png";
@@ -219,7 +218,7 @@ export default function Home({ lang }) {
           marginTop: "2rem",
         }}
       >
-        {[pic1, pic2, pic3, pic4, pic5, pic6, sign].map((src, idx) => (
+        {[pic1, pic2, pic3, pic4, pic5, sign].map((src, idx) => (
           <img
             key={idx}
             src={src}

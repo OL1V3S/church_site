@@ -46,9 +46,9 @@ export default function App() {
           <NavLink to="/staff" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
             {navText[language].staff}
           </NavLink>
-          <NavLink to="/event" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
+          {/* <NavLink to="/event" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
             {navText[language].event}
-          </NavLink>
+          </NavLink> */}
           <button onClick={toggleLang} style={buttonStyle}>
             {navText[language].toggle}
           </button>
@@ -66,9 +66,9 @@ export default function App() {
             <NavLink to="/staff" className="nav-link" onClick={() => setMenuOpen(false)}>
               {navText[language].staff}
             </NavLink>
-            <NavLink to="/event" className="nav-link" onClick={() => setMenuOpen(false)}>
+            {/* <NavLink to="/event" className="nav-link" onClick={() => setMenuOpen(false)}>
               {navText[language].event}
-            </NavLink>
+            </NavLink> */}
             <button onClick={() => { toggleLang(); setMenuOpen(false); }} style={buttonStyle}>
               {navText[language].toggle}
             </button>

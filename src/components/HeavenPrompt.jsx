@@ -23,8 +23,8 @@ export default function HeavenPrompt({ lang }) {
         }}
       >
         {lang === "en"
-          ? "Do You Have A Home in Heaven?"
-          : "¿Tiene un Hogar en el Cielo?"}
+          ? "Do you have a home in heaven?"
+          : "¿Tiene un hogar en el cielo?"}
       </h2>
       <p
         style={{
@@ -35,8 +35,8 @@ export default function HeavenPrompt({ lang }) {
         }}
       >
         {lang === "en"
-          ? "Nothing is more important than knowing that you have made your reservation in Heaven for all eternity."
-          : "Nada es más importante que saber que ha hecho su reservación en el Cielo por toda la eternidad."}
+          ? "Nothing is more important than knowing that you have made your reservation in heaven for all eternity."
+          : "Nada es más importante que saber que ha hecho su reservación en el cielo por toda la eternidad."}
       </p>
       <button
         onClick={() => navigate("/gospel")}

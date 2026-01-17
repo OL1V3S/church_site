@@ -14,7 +14,7 @@ export default function Staff({ lang }) {
         name: "Jhonny Santana",
         title: "Youth Pastor",
         image: youthPastor,
-        description: "Brother Jhonny has served as the youth pastor at Iglesia Templo Bautista since 2023. He is a graduate of Hyles-Anderson College and oversees the youth ministry and other areas of service within the church.",
+        description: "Brother Jhonny has served as the youth pastor at Iglesia Templo Bautista since 2023. He is a graduate of Hyles-Anderson College and oversees the youth ministry and other areas of service within the church. Him and his wife Abigail have been married since December of 2025.",
       },
     ],
     es: [
@@ -22,13 +22,13 @@ export default function Staff({ lang }) {
         name: "Eusebio Santana",
         title: "Pastor",
         image: pastor,
-        description: "El Pastor Santana ha pastoreado la Iglesia Templo Bautista desde el 2013. Antes de ser pastor, sirvió en la Iglesia El Peregrino por años. El y su esposa Rosa han estado casados desde Marzo de 1994",
+        description: "El Pastor Santana ha pastoreado la Iglesia Templo Bautista desde el 2013. Antes de ser pastor, sirvió en la Iglesia El Peregrino por años. El y su esposa Rosa han estado casados desde Marzo de 1994.",
       },
       {
         name: "Jhonny Santana",
         title: "Pastor de Jovenes",
         image: youthPastor,
-        description: "El Hermano Jhonny Santana ha servido como pastor de jóvenes en la Iglesia Templo Bautista desde 2023. Es graduado de Hyles-Anderson College y dirige el ministerio de jóvenes y otras áreas de servicio dentro de la iglesia.",
+        description: "El Hermano Jhonny Santana ha servido como pastor de jóvenes en la Iglesia Templo Bautista desde 2023. Es graduado de Hyles-Anderson College y dirige el ministerio de jóvenes y otras áreas de servicio dentro de la iglesia. El y su esposa Abigail han estado casados desde Diciembre de 2025.",
       },
     ],
   };
