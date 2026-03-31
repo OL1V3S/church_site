@@ -49,7 +49,7 @@ export default function About({ lang }) {
       {/* Paragraphs */}
       <div
         style={{
-          color: "black",
+          color: "#18243a",
           fontFamily: "Trebuchet MS",
           fontSize: "1.3rem",
           lineHeight: "1.8",

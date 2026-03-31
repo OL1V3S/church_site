@@ -40,7 +40,7 @@ export default function Event({ lang }) {
       <div
         style={{
           textAlign: "center",
-          color: "black",
+          color: "#18243a",
           fontFamily: "Trebuchet MS",
           fontSize: "1.5rem",
           lineHeight: "1.8",

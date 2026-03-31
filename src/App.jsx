@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import "./App.css";
 
+import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Event from "./pages/Event";
@@ -49,6 +50,7 @@ export default function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="app-shell">
         <nav className="site-nav">
           <div className="nav-inner">

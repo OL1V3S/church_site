@@ -92,7 +92,7 @@ export default function Home({ lang }) {
         <Reveal direction="right" delay={0.1}>
           <div
             style={{
-              color: "black",
+              color: "#18243a",
               fontFamily: "Trebuchet MS",
               fontSize: "1.5rem",
               lineHeight: "1.6",
@@ -208,7 +208,7 @@ export default function Home({ lang }) {
               <div style={{ textAlign: "left" }}>
                 <div
                   style={{
-                    fontFamily: "American Typewriter",
+                    fontFamily: "Trebuchet MS",
                     fontSize: "3.1rem",
                     color: "#18243a",
                   }}
@@ -219,7 +219,7 @@ export default function Home({ lang }) {
                 </div>
                 <div
                   style={{
-                    fontFamily: "American Typewriter",
+                    fontFamily: "Trebuchet MS",
                     fontSize: "2.1rem",
                     color: "#18243a",
                   }}

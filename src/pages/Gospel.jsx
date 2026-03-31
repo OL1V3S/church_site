@@ -137,6 +137,7 @@ export default function Gospel({ lang }) {
             maxWidth: "800px",
             margin: "auto",
             fontFamily: "Trebuchet MS",
+            color: "#18243a"
           }}
         >
           {(verses[lang] || verses.en).map((section, idx) => (
