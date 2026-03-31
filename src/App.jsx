@@ -52,9 +52,9 @@ export default function App() {
       <div className="app-shell">
         <nav className="site-nav">
           <div className="nav-inner">
-            <div className="brand">
-              <span className="brand-text">{navText[language].brand}</span>
-            </div>
+          <NavLink to="/" end className="brand" onClick={closeMenu}>
+            <span className="brand-text">{navText[language].brand}</span>
+          </NavLink>
 
             <div className="desktop-nav">
               {navItems.map((item) => (

@@ -19,7 +19,6 @@ export default function Home({ lang }) {
 
   return (
     <div>
-      {/* Cover section with logo */}
       <div style={{ position: "relative", height: "52vh", width: "100%" }}>
         <img
           src={churchImg}
@@ -55,7 +54,6 @@ export default function Home({ lang }) {
         />
       </div>
 
-      {/* Text content section */}
       <div
         style={{
           maxWidth: "800px",
@@ -163,7 +161,7 @@ export default function Home({ lang }) {
                   {lang === "en" ? "Sunday Morning" : "Predicación"} - 11:00am
                 </div>
                 <div>
-                  {lang === "en" ? "Evening Service" : "Predicación"} – 6:00pm
+                  {lang === "en" ? "Evening Service" : "Predicación"} - 6:00pm
                 </div>
               </div>
               <div style={{ marginTop: "1rem" }}>
@@ -187,44 +185,96 @@ export default function Home({ lang }) {
         </Reveal>
 
         <Reveal direction="right" delay={0.1}>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              marginTop: "2rem",
-              gap: "1rem",
-            }}
-          >
-            <img
-              src={locationImg}
-              alt="Location"
-              style={{ width: "200px", height: "200px" }}
-            />
+          <div style={{ marginTop: "2rem" }}>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "1rem",
+                marginBottom: "1.5rem",
+                flexWrap: "wrap",
+              }}
+            >
+              <img
+                src={locationImg}
+                alt="Location"
+                style={{ width: "200px", height: "200px" }}
+              />
 
-            <div style={{ textAlign: "left" }}>
-              <div
-                style={{
-                  fontFamily: "American Typewriter",
-                  fontSize: "3.1rem",
-                  color: "#18243a",
-                }}
-              >
-                <strong>
-                  {lang === "en" ? "Our Location:" : "Nuestra Locación:"}
-                </strong>
+              <div style={{ textAlign: "left" }}>
+                <div
+                  style={{
+                    fontFamily: "American Typewriter",
+                    fontSize: "3.1rem",
+                    color: "#18243a",
+                  }}
+                >
+                  <strong>
+                    {lang === "en" ? "Our Location:" : "Nuestra Locación:"}
+                  </strong>
+                </div>
+                <div
+                  style={{
+                    fontFamily: "American Typewriter",
+                    fontSize: "2.1rem",
+                    color: "#18243a",
+                  }}
+                >
+                  804 S. 14th Ave <br />
+                  Dodge City, KS 67801 <br />
+                  620-255-3740
+                </div>
               </div>
-              <div
+            </div>
+
+            <div style={{ marginTop: "3rem" }}>
+              <a
+                className="button"
+                target="_blank"
+                href="https://maps.app.goo.gl/vbZVNoeWtNqApurL6"
+                rel="noreferrer"
                 style={{
-                  fontFamily: "American Typewriter",
-                  fontSize: "2.1rem",
-                  color: "#18243a",
+                  marginTop: "2rem",
+                  marginBottom: "2rem",
+                  padding: "1rem 3.5rem",
+                  backgroundColor: "#18243a",
+                  color: "white",
+                  border: "none",
+                  borderRadius: "8px",
+                  fontSize: "2.5rem",
+                  fontWeight: "bold",
+                  fontFamily: "Trebuchet MS",
+                  cursor: "pointer",
+                  transition: "background-color 0.3s ease",
+                  textDecoration: "none"}}>
+                
+                <strong>{lang === "en" ? "Open in Maps" : "Abrir en Mapas"}</strong>
+                
+              </a>
+            </div>
+
+            <div
+              style={{
+                width: "100%",
+                maxWidth: "800px",
+                margin: "0 auto",
+                marginTop: "2rem",
+              }}
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3155.2358373031066!2d-100.03247139999999!3d37.737611099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87a71b211d5a52f5%3A0x82f74e9bb358df0d!2sIglesia%20templo%20Bautista%20fundamental%20Independiente!5e0!3m2!1sen!2sus!4v1774971327023!5m2!1sen!2sus"
+                style={{
+                  width: "100%",
+                  height: "400px",
+                  border: "5px solid #18243a",
+                  borderRadius: "8px",
                 }}
-              >
-                804 S. 14th Ave <br />
-                Dodge City, KS 67801 <br />
-                620-255-3740
-              </div>
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Iglesia Templo Bautista"
+              />
             </div>
           </div>
         </Reveal>
