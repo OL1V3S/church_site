@@ -131,14 +131,17 @@ export default function Home({ lang }) {
             style={{
               display: "flex",
               alignItems: "flex-start",
-              gap: "1rem",
               marginTop: "2rem",
+              justifyContent: "center",
+              gap: "1rem",
+              marginBottom: "1.5rem",
+              flexWrap: "wrap",
             }}
           >
             <img
               src={clockImg}
               alt="Clock"
-              style={{ width: "200px", height: "200px", marginTop: "6px" }}
+              style={{ width: "200px", height: "200px" }}
             />
 
             <div
