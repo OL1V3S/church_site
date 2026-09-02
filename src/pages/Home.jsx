@@ -1,28 +1,69 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import pic1 from "../assets/homeGallery/pic1.png";
-import pic2 from "../assets/homeGallery/pic2.png";
-import pic3 from "../assets/homeGallery/pic3.png";
-import pic4 from "../assets/homeGallery/pic4.png";
-import pic5 from "../assets/homeGallery/pic5.png";
+import pic1Small from "../assets/homeGallery/pic1-640.webp";
+import pic1Large from "../assets/homeGallery/pic1-1200.webp";
+import pic2Small from "../assets/homeGallery/pic2-640.webp";
+import pic2Large from "../assets/homeGallery/pic2-1200.webp";
+import pic3Small from "../assets/homeGallery/pic3-640.webp";
+import pic3Large from "../assets/homeGallery/pic3-1200.webp";
+import pic4Small from "../assets/homeGallery/pic4-640.webp";
+import pic4Large from "../assets/homeGallery/pic4-1200.webp";
+import pic5Small from "../assets/homeGallery/pic5-640.webp";
+import pic5Large from "../assets/homeGallery/pic5-1200.webp";
 
-import churchImg from "../assets/church.png";
+import churchSmall from "../assets/church-960.webp";
+import churchLarge from "../assets/church-1920.webp";
 import logoImg from "../assets/churchLogo1.png";
 import clockImg from "../assets/clock.png";
 import locationImg from "../assets/location.png";
 
 import Reveal from "../components/Reveal";
 
+const galleryImages = [
+  {
+    small: pic1Small,
+    large: pic1Large,
+    alt: "Children and adults gathered during a church program",
+  },
+  {
+    small: pic2Small,
+    large: pic2Large,
+    alt: "Church youth group gathered in the sanctuary",
+  },
+  {
+    small: pic3Small,
+    large: pic3Large,
+    alt: "Church members gathered at an outdoor community event",
+  },
+  {
+    small: pic4Small,
+    large: pic4Large,
+    alt: "Church families gathered with the flag of Guatemala",
+  },
+  {
+    small: pic5Small,
+    large: pic5Large,
+    alt: "Church members gathered with the flag of El Salvador",
+  },
+];
+
 export default function Home({ lang }) {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <div style={{ position: "relative", height: "52vh", width: "100%" }}>
+    <main>
+      <div className="home-hero">
         <img
-          src={churchImg}
-          alt="Church Cover"
+          src={churchLarge}
+          srcSet={`${churchSmall} 960w, ${churchLarge} 1920w`}
+          sizes="100vw"
+          alt="Iglesia Templo Bautista church building at sunset"
+          width="1920"
+          height="913"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
           style={{
             objectFit: "cover",
             objectPosition: "center center",
@@ -34,7 +75,10 @@ export default function Home({ lang }) {
         />
         <img
           src={logoImg}
-          alt="Church Logo"
+          alt="Iglesia Templo Bautista logo"
+          width="160"
+          height="160"
+          decoding="async"
           style={{
             objectFit: "cover",
             transform: "translate(-50%, -50%) scale(1.1)",
@@ -91,10 +135,10 @@ export default function Home({ lang }) {
 
         <Reveal direction="right" delay={0.1}>
           <div
+            className="home-intro"
             style={{
               color: "#18243a",
               fontFamily: "Trebuchet MS",
-              fontSize: "1.5rem",
               lineHeight: "1.6",
               textAlign: "center",
             }}
@@ -107,15 +151,14 @@ export default function Home({ lang }) {
 
         <Reveal direction="up" delay={0.15}>
           <button
+            className="home-action doctrine-action"
             onClick={() => navigate("/about")}
             style={{
               marginTop: "2rem",
-              padding: "1rem 2.5rem",
               backgroundColor: "#18243a",
               color: "white",
               border: "none",
               borderRadius: "8px",
-              fontSize: "2.5rem",
               fontWeight: "bold",
               fontFamily: "Trebuchet MS",
               cursor: "pointer",
@@ -140,19 +183,23 @@ export default function Home({ lang }) {
           >
             <img
               src={clockImg}
-              alt="Clock"
+              alt=""
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
               style={{ width: "200px", height: "200px" }}
             />
 
             <div
+              className="home-info-copy"
               style={{
                 textAlign: "left",
-                fontSize: "2rem",
                 color: "#18243a",
                 fontFamily: "Trebuchet MS",
               }}
             >
-              <div style={{ fontWeight: "bold", fontSize: "3.1rem" }}>
+              <div className="home-info-heading" style={{ fontWeight: "bold" }}>
                 {lang === "en" ? "Service Hours:" : "Horas de Servicio:"}
               </div>
               <div style={{ marginTop: ".01rem" }}>
@@ -201,15 +248,19 @@ export default function Home({ lang }) {
             >
               <img
                 src={locationImg}
-                alt="Location"
+                alt=""
+                width="200"
+                height="200"
+                loading="lazy"
+                decoding="async"
                 style={{ width: "200px", height: "200px" }}
               />
 
               <div style={{ textAlign: "left" }}>
                 <div
+                  className="home-info-heading"
                   style={{
                     fontFamily: "Trebuchet MS",
-                    fontSize: "3.1rem",
                     color: "#18243a",
                   }}
                 >
@@ -218,9 +269,9 @@ export default function Home({ lang }) {
                   </strong>
                 </div>
                 <div
+                  className="home-location-text"
                   style={{
                     fontFamily: "Trebuchet MS",
-                    fontSize: "2.1rem",
                     color: "#18243a",
                   }}
                 >
@@ -233,27 +284,27 @@ export default function Home({ lang }) {
 
             <div style={{ marginTop: "3rem" }}>
               <a
-                className="button"
+                className="button home-action map-action"
                 target="_blank"
                 href="https://maps.app.goo.gl/vbZVNoeWtNqApurL6"
                 rel="noreferrer"
                 style={{
                   marginTop: "2rem",
                   marginBottom: "2rem",
-                  padding: "1rem 3.5rem",
                   backgroundColor: "#18243a",
                   color: "white",
                   border: "none",
                   borderRadius: "8px",
-                  fontSize: "2.5rem",
                   fontWeight: "bold",
                   fontFamily: "Trebuchet MS",
                   cursor: "pointer",
                   transition: "background-color 0.3s ease",
-                  textDecoration: "none"}}>
-                
-                <strong>{lang === "en" ? "Open in Maps" : "Abrir en Mapas"}</strong>
-                
+                  textDecoration: "none",
+                }}
+              >
+                <strong>
+                  {lang === "en" ? "Open in Maps" : "Abrir en Mapas"}
+                </strong>
               </a>
             </div>
 
@@ -266,6 +317,7 @@ export default function Home({ lang }) {
               }}
             >
               <iframe
+                className="map-frame"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3155.2358373031066!2d-100.03247139999999!3d37.737611099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87a71b211d5a52f5%3A0x82f74e9bb358df0d!2sIglesia%20templo%20Bautista%20fundamental%20Independiente!5e0!3m2!1sen!2sus!4v1774971327023!5m2!1sen!2sus"
                 style={{
                   width: "100%",
@@ -285,6 +337,14 @@ export default function Home({ lang }) {
 
       <Reveal direction="up" delay={0.1}>
         <div
+          className="gallery-strip"
+          aria-label={
+            lang === "en"
+              ? "Church photo gallery"
+              : "Galería de fotos de la iglesia"
+          }
+          role="region"
+          tabIndex="0"
           style={{
             overflowX: "auto",
             whiteSpace: "nowrap",
@@ -292,14 +352,20 @@ export default function Home({ lang }) {
             marginTop: "2rem",
           }}
         >
-          {[pic1, pic2, pic3, pic4, pic5].map((src, idx) => (
+          {galleryImages.map((image) => (
             <img
-              key={idx}
-              src={src}
-              alt={`Gallery ${idx + 1}`}
+              key={image.large}
+              className="gallery-image"
+              src={image.small}
+              srcSet={`${image.small} 640w, ${image.large} 1200w`}
+              sizes="(max-width: 600px) 85vw, 500px"
+              alt={image.alt}
+              width="1200"
+              height="900"
+              loading="lazy"
+              decoding="async"
+              fetchPriority="low"
               style={{
-                width: "500px",
-                height: "400px",
                 objectFit: "cover",
                 borderRadius: "8px",
                 marginRight: "1rem",
@@ -309,6 +375,6 @@ export default function Home({ lang }) {
           ))}
         </div>
       </Reveal>
-    </div>
+    </main>
   );
 }

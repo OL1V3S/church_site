@@ -1,36 +1,47 @@
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 export default function Reveal({
   children,
   direction = "up",
   delay = 0,
 }) {
-  const variants = {
-    hidden: {
-      opacity: 0,
-      x: direction === "left" ? -100 : direction === "right" ? 100 : 0,
-      y: direction === "up" ? 30 : 0,
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      y: 0,
-      transition: {
-        duration: 3,
-        delay,
-        ease: [0.22, 1, 0.36, 1],
+  const elementRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const element = elementRef.current;
+    if (!element) return undefined;
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+      setIsVisible(true);
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
       },
-    },
-  };
+      { threshold: 0.2 },
+    );
+
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <motion.div
-      variants={variants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+    <div
+      ref={elementRef}
+      className={`reveal reveal-${direction} ${isVisible ? "is-visible" : ""}`}
+      style={{ "--reveal-delay": `${delay}s` }}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

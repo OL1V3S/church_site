@@ -1,9 +1,16 @@
 /* === Global Styles === */
+html {
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #DBDBDB;
   color: #000000;
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 img {

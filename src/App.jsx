@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import {
   HashRouter as Router,
   Routes,
@@ -9,11 +9,12 @@ import "./App.css";
 
 import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Event from "./pages/Event";
-import Staff from "./pages/Staff";
-import Gospel from "./pages/Gospel";
 import GospelInvite from "./components/HeavenPrompt";
+
+const About = lazy(() => import("./pages/About"));
+const Event = lazy(() => import("./pages/Event"));
+const Staff = lazy(() => import("./pages/Staff"));
+const Gospel = lazy(() => import("./pages/Gospel"));
 
 export default function App() {
   const [language, setLanguage] = useState("en");
@@ -41,6 +42,10 @@ export default function App() {
   const toggleLang = () => setLanguage((lang) => (lang === "en" ? "es" : "en"));
   const closeMenu = () => setMenuOpen(false);
 
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
+
   const navItems = [
     { to: "/", label: navText[language].home, end: true },
     { to: "/about", label: navText[language].about },
@@ -54,9 +59,9 @@ export default function App() {
       <div className="app-shell">
         <nav className="site-nav">
           <div className="nav-inner">
-          <NavLink to="/" end className="brand" onClick={closeMenu}>
-            <span className="brand-text">{navText[language].brand}</span>
-          </NavLink>
+            <NavLink to="/" end className="brand" onClick={closeMenu}>
+              <span className="brand-text">{navText[language].brand}</span>
+            </NavLink>
 
             <div className="desktop-nav">
               {navItems.map((item) => (
@@ -80,8 +85,13 @@ export default function App() {
             <button
               className={`hamburger ${menuOpen ? "open" : ""}`}
               onClick={() => setMenuOpen((prev) => !prev)}
-              aria-label="Toggle menu"
+              aria-label={
+                language === "en"
+                  ? "Toggle navigation menu"
+                  : "Abrir o cerrar el menú de navegación"
+              }
               aria-expanded={menuOpen}
+              aria-controls="mobile-navigation"
             >
               <span />
               <span />
@@ -90,7 +100,7 @@ export default function App() {
           </div>
 
           {menuOpen && (
-            <div className="mobile-menu">
+            <div className="mobile-menu" id="mobile-navigation">
               {navItems.map((item) => (
                 <NavLink
                   key={item.to}
@@ -118,41 +128,49 @@ export default function App() {
           )}
         </nav>
 
-        <Routes>
-          <Route path="/" element={<Home lang={language} />} />
-          <Route
-            path="/about"
-            element={
-              <main className="page-content">
-                <About lang={language} />
-              </main>
-            }
-          />
-          <Route
-            path="/staff"
-            element={
-              <main className="page-content">
-                <Staff lang={language} />
-              </main>
-            }
-          />
-          <Route
-            path="/event"
-            element={
-              <main className="page-content">
-                <Event lang={language} />
-              </main>
-            }
-          />
-          <Route
-            path="/gospel"
-            element={
-              <main className="page-content">
-                <Gospel lang={language} />
-              </main>
-            }
-          />
-        </Routes>
+        <Suspense
+          fallback={
+            <main className="page-content route-loading" role="status">
+              {language === "en" ? "Loading page…" : "Cargando página…"}
+            </main>
+          }
+        >
+          <Routes>
+            <Route path="/" element={<Home lang={language} />} />
+            <Route
+              path="/about"
+              element={
+                <main className="page-content">
+                  <About lang={language} />
+                </main>
+              }
+            />
+            <Route
+              path="/staff"
+              element={
+                <main className="page-content">
+                  <Staff lang={language} />
+                </main>
+              }
+            />
+            <Route
+              path="/event"
+              element={
+                <main className="page-content">
+                  <Event lang={language} />
+                </main>
+              }
+            />
+            <Route
+              path="/gospel"
+              element={
+                <main className="page-content">
+                  <Gospel lang={language} />
+                </main>
+              }
+            />
+          </Routes>
+        </Suspense>
 
         <GospelInvite lang={language} />
       </div>

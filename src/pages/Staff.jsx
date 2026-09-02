@@ -1,19 +1,7 @@
-import { useState, useEffect } from "react";
-import youthPastor from "../assets/youthPastor.png";
-import pastor from "../assets/pastor.png";
+import youthPastor from "../assets/youthPastor-480.webp";
+import pastor from "../assets/pastor-480.webp";
 
 export default function Staff({ lang }) {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   const staffList = {
     en: [
       {
@@ -50,63 +38,29 @@ export default function Staff({ lang }) {
   };
 
   return (
-    <div style={{ padding: isMobile ? "1rem" : "2rem" }}>
-      <h1
-        style={{
-          fontFamily: "American Typewriter",
-          color: "#18243a",
-          fontSize: isMobile ? "2rem" : "2.5rem",
-          textAlign: "center",
-          marginBottom: "2rem",
-        }}
-      >
+    <div className="staff-page">
+      <h1 className="staff-heading">
         {lang === "en" ? "Our Staff" : "Nuestro Personal"}
       </h1>
 
-      {staffList[lang].map((person, index) => (
-        <div
-          key={index}
-          style={{
-            display: "flex",
-            flexDirection: isMobile ? "column" : "row",
-            alignItems: "center",
-            textAlign: isMobile ? "center" : "left",
-            gap: isMobile ? "1.25rem" : "2rem",
-            maxWidth: "900px",
-            margin: "2rem auto",
-            padding: isMobile ? "1.25rem" : "2rem",
-            backgroundColor: "#dcdcdc",
-            borderRadius: "12px",
-          }}
-        >
+      {staffList[lang].map((person) => (
+        <article className="staff-card" key={person.name}>
           <img
+            className="staff-photo"
             src={person.image}
             alt={person.name}
-            style={{
-              width: isMobile ? "180px" : "200px",
-              height: isMobile ? "180px" : "200px",
-              objectFit: "cover",
-              borderRadius: "50%",
-              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
-              flexShrink: 0,
-            }}
+            width="200"
+            height="200"
+            decoding="async"
           />
 
-          <div
-            style={{
-              fontFamily: "Trebuchet MS",
-              fontSize: isMobile ? "1rem" : "1.2rem",
-              lineHeight: "1.6",
-              color: "#18243a",
-              maxWidth: "600px",
-            }}
-          >
+          <div className="staff-copy">
             <p style={{ marginBottom: "0.75rem" }}>
               <strong>{person.name}</strong> — {person.title}
             </p>
             <p style={{ margin: 0 }}>{person.description}</p>
           </div>
-        </div>
+        </article>
       ))}
     </div>
   );

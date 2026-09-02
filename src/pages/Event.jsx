@@ -27,6 +27,9 @@ export default function Event({ lang }) {
         <img
           src={calendarImg}
           alt="Church Calendar"
+          width="250"
+          height="250"
+          decoding="async"
           style={{
             width: "250px",
             height: "250px",
