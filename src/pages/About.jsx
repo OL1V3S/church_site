@@ -26,8 +26,10 @@ export default function About({ lang }) {
         <h1>{content[lang].title}</h1>
       </header>
 
+      <p className="about-lede">{content[lang].paragraphs[0]}</p>
+
       <div className="about-copy">
-        {content[lang].paragraphs.map((text, idx) => (
+        {content[lang].paragraphs.slice(1).map((text, idx) => (
           <p key={idx}>{text}</p>
         ))}
       </div>
