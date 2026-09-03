@@ -1,39 +1,28 @@
-# Iglesia Templo Bautista – Church Website
+# Iglesia Templo Bautista
 
-Hosted at https://templobautista.net/
+Bilingual English/Spanish website for Iglesia Templo Bautista in Dodge City, Kansas.
 
-A bilingual (English/Spanish) website built with **React** and **Vite** for Iglesia Templo Bautista. This site provides basic information about the church, service hours, doctrine, and contact options.
+[View the live website](https://templobautista.net/)
 
+## Development
 
+Requires Node.js 20 or newer.
 
+```bash
+npm install
+npm run dev
+```
 
-## Features
+Other commands:
 
-- Bilingual toggle (English / Español)
-- Clean, responsive layout
-- Styled with custom fonts
+- `npm run build` creates the production build in `dist/`.
+- `npm run preview` serves the production build locally.
+- `npm run lint` checks the source with ESLint.
 
----
+## Deployment
 
-## Built With
+Pushes to `main` are built and deployed to GitHub Pages by the workflow in `.github/workflows/deploy.yml`. The custom domain is configured in `CNAME`.
 
-- [React](https://reactjs.org/)
-- [Vite](https://vitejs.dev/)
-- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) 
-- [React Router](https://reactrouter.com/)
-- [Git + GitHub](https://github.com/)
+Built with React, Vite, React Router, and custom CSS.
 
----
-
-### Website by Oliver Triana, project for Iglesia Templo Bautista
-
-## Icon Credits
-
-- Clock icon by <a href="https://www.flaticon.com/free-icons/clock" title="clock icons">Clock icons created by Those Icons - Flaticon</a>
-
-- Location icon by [Freepik](https://www.flaticon.com/free-icons/location) from [Flaticon](https://www.flaticon.com/)
-
-- Appointment icon by [Smashicons](https://www.flaticon.com/free-icon/appointment_16923800?term=events&page=1&position=56&origin=search&related_id=16923800/)
-
-
-
+Calendar icon by [Smashicons on Flaticon](https://www.flaticon.com/free-icon/appointment_16923800).
