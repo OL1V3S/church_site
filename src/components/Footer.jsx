@@ -35,7 +35,6 @@ export default function Footer({ lang }) {
     <footer className="site-footer">
       <div className="footer-grid">
         <div className="footer-brand">
-          <div className="footer-brand-mark" aria-hidden="true" />
           <div>
             <strong>Iglesia Templo Bautista</strong>
             <p>804 S. 14th Ave</p>

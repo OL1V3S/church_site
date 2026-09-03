@@ -23,12 +23,7 @@ export default function About({ lang }) {
   return (
     <article className="about-card">
       <header className="page-header about-header">
-        <p className="section-eyebrow">
-          {lang === "en" ? "Our Faith" : "Nuestra Fe"}
-        </p>
-        <h1>
-        {content[lang].title}
-        </h1>
+        <h1>{content[lang].title}</h1>
       </header>
 
       <div className="about-copy">

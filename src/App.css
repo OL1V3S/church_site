@@ -244,7 +244,7 @@ button {
   justify-content: center;
   min-height: 48px;
   padding: 0.85rem 1.5rem;
-  border-radius: 999px;
+  border-radius: 6px;
   cursor: pointer;
   font-weight: 800;
   text-decoration: none;
@@ -258,7 +258,6 @@ button {
   border: 2px solid var(--text);
   background: var(--text);
   color: #ffffff;
-  box-shadow: 0 8px 20px rgba(24, 36, 58, 0.16);
 }
 
 .outline-button {
@@ -273,7 +272,7 @@ button {
 }
 
 .primary-button:hover {
-  box-shadow: 0 12px 28px rgba(24, 36, 58, 0.22);
+  background: #24334e;
 }
 
 .outline-button:hover {
@@ -354,68 +353,57 @@ button {
 
 .visit-section {
   margin-bottom: clamp(2rem, 5vw, 4rem);
-  border: 1px solid var(--border);
-  border-radius: calc(var(--radius) + 4px);
-  background: var(--surface-soft);
 }
 
-.visit-grid {
+.visit-section .section-heading,
+.gallery-section .section-heading {
+  max-width: none;
+  margin-left: 0;
+  text-align: left;
+}
+
+.visit-layout {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: minmax(260px, 0.75fr) minmax(0, 1.4fr);
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: start;
 }
 
-.visit-grid > .reveal {
-  height: 100%;
-}
-
-.info-card {
-  height: 100%;
-  padding: clamp(1.4rem, 3vw, 2.25rem);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--surface);
-  box-shadow: var(--shadow-sm);
-}
-
-.info-card-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.info-icon {
-  width: 82px;
-  height: 82px;
-  flex: 0 0 auto;
-  object-fit: contain;
-}
-
-.info-card h3 {
-  margin: 0;
+.schedule-panel h3,
+.location-panel h3 {
+  margin: 0 0 1.5rem;
   font-family: "American Typewriter", "Courier New", serif;
-  font-size: clamp(1.55rem, 3.5vw, 2.15rem);
+  font-size: clamp(1.5rem, 3vw, 2rem);
   line-height: 1.15;
+}
+
+.schedule-panel,
+.location-panel {
+  min-width: 0;
+}
+
+.location-details {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 2rem;
+  align-items: end;
+  margin-bottom: 1.25rem;
+}
+
+.location-details h3 {
+  grid-column: 1 / -1;
 }
 
 .service-list {
   display: grid;
-  gap: 1rem;
+  gap: 1.15rem;
 }
 
 .service-day {
   display: grid;
   gap: 0.2rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border);
   color: var(--text-soft);
   line-height: 1.5;
-}
-
-.service-day:first-child {
-  padding-top: 0;
-  border-top: 0;
 }
 
 .service-day strong {
@@ -424,11 +412,11 @@ button {
 }
 
 .location-address {
-  margin: 0 0 2rem;
+  margin: 0;
   color: var(--text-soft);
-  font-size: clamp(1.15rem, 2.5vw, 1.35rem);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
   font-style: normal;
-  line-height: 1.65;
+  line-height: 1.6;
 }
 
 .location-address a {
@@ -436,18 +424,18 @@ button {
   font-weight: 700;
 }
 
-.compact-button {
-  padding-inline: 1.4rem;
+.location-link {
+  color: var(--text);
+  font-weight: 800;
+  text-underline-offset: 0.2em;
 }
 
 .map-shell {
-  height: clamp(300px, 38vw, 440px);
-  margin-top: 1.25rem;
+  height: clamp(280px, 31vw, 390px);
   overflow: hidden;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: 8px;
   background: #d5d9dd;
-  box-shadow: var(--shadow-sm);
 }
 
 .map-frame {
@@ -462,17 +450,20 @@ button {
 
 .gallery-strip {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.5rem;
 }
 
 .gallery-item {
+  grid-column: span 2;
   min-width: 0;
   margin: 0;
   overflow: hidden;
-  border-radius: var(--radius-sm);
   background: #d5d9dd;
-  box-shadow: var(--shadow-sm);
+}
+
+.gallery-item:nth-child(n + 4) {
+  grid-column: span 3;
 }
 
 .gallery-image {
@@ -690,17 +681,14 @@ button {
 
 /* About */
 .about-card {
-  max-width: 840px;
+  max-width: 760px;
   margin: 0 auto;
-  padding: clamp(1.75rem, 5vw, 3.5rem);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--surface);
-  box-shadow: var(--shadow-sm);
+  padding: clamp(1rem, 4vw, 2.5rem) 0;
 }
 
 .about-header {
   margin-bottom: 2rem;
+  text-align: left;
 }
 
 .about-copy {
@@ -710,9 +698,7 @@ button {
 }
 
 .about-copy p {
-  margin: 0;
-  padding: 1.25rem 0;
-  border-top: 1px solid var(--border);
+  margin: 0 0 1.4rem;
 }
 
 /* Gospel */
@@ -847,19 +833,7 @@ button {
 }
 
 .footer-brand {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-}
-
-.footer-brand-mark {
-  width: 14px;
-  height: 14px;
-  margin-top: 0.35rem;
-  flex: 0 0 auto;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 20px rgba(160, 255, 209, 0.6);
+  display: block;
 }
 
 .footer-brand strong {
@@ -992,23 +966,22 @@ button {
   }
 
   .visit-section {
-    width: calc(100% - 1.25rem);
-    padding-inline: 0.75rem;
-    border-radius: var(--radius);
+    padding-inline: 1rem;
   }
 
-  .visit-grid,
+  .visit-layout,
   .event-grid {
     grid-template-columns: 1fr;
   }
 
-  .info-card-header {
-    align-items: center;
+  .visit-layout {
+    gap: 3rem;
   }
 
-  .info-icon {
-    width: 72px;
-    height: 72px;
+  .location-details {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    align-items: start;
   }
 
   .map-shell {
