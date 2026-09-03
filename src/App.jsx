@@ -10,6 +10,7 @@ import "./App.css";
 import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import GospelInvite from "./components/HeavenPrompt";
+import Footer from "./components/Footer";
 
 const About = lazy(() => import("./pages/About"));
 const Event = lazy(() => import("./pages/Event"));
@@ -57,7 +58,10 @@ export default function App() {
     <Router>
       <ScrollToTop />
       <div className="app-shell">
-        <nav className="site-nav">
+        <nav
+          className="site-nav"
+          aria-label={language === "en" ? "Main navigation" : "Navegación principal"}
+        >
           <div className="nav-inner">
             <NavLink to="/" end className="brand" onClick={closeMenu}>
               <span className="brand-text">{navText[language].brand}</span>
@@ -173,6 +177,7 @@ export default function App() {
         </Suspense>
 
         <GospelInvite lang={language} />
+        <Footer lang={language} />
       </div>
     </Router>
   );

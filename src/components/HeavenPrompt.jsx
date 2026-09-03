@@ -1,59 +1,32 @@
-// components/HeavenPrompt.jsx
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function HeavenPrompt({ lang }) {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  if (pathname === "/gospel") return null;
 
   return (
-    <div
-      style={{
-        marginTop: "4rem",
-        padding: "2rem",
-        backgroundColor: "#fefefe",
-        textAlign: "center",
-        borderTop: "2px solid #ccc",
-        borderRadius: "12px",
-      }}
-    >
-      <h2
-        style={{
-          color: "#0a3b4c",
-          fontFamily: "American Typewriter",
-          fontSize: "2rem",
-        }}
-      >
+    <section className="gospel-invite" aria-labelledby="gospel-invite-title">
+      <p className="section-eyebrow">
+        {lang === "en" ? "The Gospel" : "El Evangelio"}
+      </p>
+      <h2 id="gospel-invite-title">
         {lang === "en"
           ? "Do you have a home in heaven?"
           : "¿Tiene un hogar en el cielo?"}
       </h2>
-      <p
-        style={{
-          fontFamily:"American Typewriter",
-          fontStyle: "italic",
-          fontSize: "1.3rem",
-          marginTop: "1rem",
-        }}
-      >
+      <p className="gospel-invite-copy">
         {lang === "en"
           ? "Nothing is more important than knowing that you have made your reservation in heaven for all eternity."
           : "Nada es más importante que saber que ha hecho su reservación en el cielo por toda la eternidad."}
       </p>
       <button
+        className="outline-button"
         onClick={() => navigate("/gospel")}
-        style={{
-          marginTop: "2rem",
-          padding: "0.8rem 2rem",
-          fontSize: "1.2rem",
-          fontWeight: "bold",
-          border: "2px solid #0a3b4c",
-          borderRadius: "999px",
-          backgroundColor: "transparent",
-          color: "#0a3b4c",
-          cursor: "pointer",
-        }}
       >
         {lang === "en" ? "READ MORE" : "LEER MÁS"}
       </button>
-    </div>
+    </section>
   );
 }

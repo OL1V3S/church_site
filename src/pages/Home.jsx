@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import pic1Small from "../assets/homeGallery/pic1-640.webp";
@@ -48,13 +47,76 @@ const galleryImages = [
   },
 ];
 
+const content = {
+  en: {
+    welcome: "Welcome to",
+    intro:
+      "We are an old-fashioned Independent Baptist Church. We sing the old-time hymns and preach out of the King James Bible exclusively, believing it to be the Word of God. We are not contemporary in our worship. We strive to be a lighthouse proclaiming the Gospel of Jesus Christ both locally and abroad.",
+    doctrine: "Our Doctrine",
+    visitEyebrow: "Plan Your Visit",
+    visitTitle: "Join us this week",
+    serviceTitle: "Service Hours",
+    locationTitle: "Our Location",
+    maps: "Open in Maps",
+    galleryEyebrow: "Our Church Family",
+    galleryTitle: "Life at Iglesia Templo Bautista",
+    galleryIntro:
+      "A glimpse of worship, fellowship, and special days with our church family.",
+    galleryHint: "Swipe to see more photos →",
+    services: [
+      {
+        day: "Sunday",
+        times: [
+          "Sunday School — 10:00am",
+          "Sunday Morning — 11:00am",
+          "Evening Service — 6:00pm",
+        ],
+      },
+      { day: "Wednesday", times: ["Bible Study — 6:00pm"] },
+      { day: "Thursday", times: ["Prayer Meeting — 6:00pm"] },
+      { day: "Saturday", times: ["Youth Group — 5:00pm"] },
+    ],
+  },
+  es: {
+    welcome: "Bienvenido a",
+    intro:
+      "Somos una iglesia Bautista Independiente. Cantamos himnos tradicionales y predicamos exclusivamente de la Biblia Reina-Valera 1960, creyendo que es la Palabra de Dios. No somos contemporáneos en nuestra adoración. Nos esforzamos por ser un faro que proclame el Evangelio de Jesucristo tanto localmente como en el extranjero.",
+    doctrine: "Nuestra Doctrina",
+    visitEyebrow: "Planea Tu Visita",
+    visitTitle: "Acompáñanos esta semana",
+    serviceTitle: "Horas de Servicio",
+    locationTitle: "Nuestra Locación",
+    maps: "Abrir en Mapas",
+    galleryEyebrow: "Nuestra Familia de la Iglesia",
+    galleryTitle: "La vida en Iglesia Templo Bautista",
+    galleryIntro:
+      "Un vistazo a la adoración, el compañerismo y los días especiales con nuestra familia de la iglesia.",
+    galleryHint: "Desliza para ver más fotos →",
+    services: [
+      {
+        day: "Domingo",
+        times: [
+          "Escuela Dominical — 10:00am",
+          "Predicación — 11:00am",
+          "Predicación — 6:00pm",
+        ],
+      },
+      { day: "Miércoles", times: ["Estudio Bíblico — 6:00pm"] },
+      { day: "Jueves", times: ["Oración — 6:00pm"] },
+      { day: "Sábado", times: ["Reunión de Jóvenes — 5:00pm"] },
+    ],
+  },
+};
+
 export default function Home({ lang }) {
   const navigate = useNavigate();
+  const copy = content[lang] || content.en;
 
   return (
     <main>
       <div className="home-hero">
         <img
+          className="home-hero-image"
           src={churchLarge}
           srcSet={`${churchSmall} 960w, ${churchLarge} 1920w`}
           sizes="100vw"
@@ -64,317 +126,155 @@ export default function Home({ lang }) {
           loading="eager"
           fetchPriority="high"
           decoding="async"
-          style={{
-            objectFit: "cover",
-            objectPosition: "center center",
-            width: "100%",
-            height: "100%",
-            filter: "brightness(0.75)",
-            display: "block",
-          }}
         />
         <img
+          className="home-logo"
           src={logoImg}
           alt="Iglesia Templo Bautista logo"
           width="160"
           height="160"
           decoding="async"
-          style={{
-            objectFit: "cover",
-            transform: "translate(-50%, -50%) scale(1.1)",
-            transformOrigin: "center center",
-            position: "absolute",
-            top: "95%",
-            left: "50%",
-            width: "160px",
-            height: "160px",
-            borderRadius: "50%",
-            border: "1px solid white",
-            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.3)",
-            backgroundColor: "white",
-            padding: "1rem",
-            zIndex: 2,
-          }}
         />
       </div>
 
-      <div
-        style={{
-          maxWidth: "800px",
-          margin: "2rem auto",
-          padding: "2rem",
-          backgroundColor: "transparent",
-          borderRadius: "0",
-          textAlign: "center",
-        }}
-      >
-        <Reveal direction="left">
-          <div style={{ textAlign: "center", marginBottom: "1.5rem" }}>
-            <div
-              style={{
-                color: "#889BAE",
-                fontFamily: "'Brush Script MT', 'Dancing Script', cursive",
-                fontSize: "3rem",
-                marginTop: "1rem",
-              }}
-            >
-              {lang === "en" ? "Welcome to" : "Bienvenido a"}
-            </div>
-            <div
-              style={{
-                color: "#18243a",
-                fontFamily: "American Typewriter",
-                fontSize: "2.5rem",
-                fontWeight: "bold",
-              }}
-            >
-              Iglesia Templo Bautista
-            </div>
-          </div>
-        </Reveal>
-
-        <Reveal direction="right" delay={0.1}>
-          <div
-            className="home-intro"
-            style={{
-              color: "#18243a",
-              fontFamily: "Trebuchet MS",
-              lineHeight: "1.6",
-              textAlign: "center",
-            }}
-          >
-            {lang === "en"
-              ? "We are an old-fashioned Independent Baptist Church. We sing the old-time hymns and preach out of the King James Bible exclusively, believing it to be the Word of God. We are not contemporary in our worship. We strive to be a lighthouse proclaiming the Gospel of Jesus Christ both locally and abroad."
-              : "Somos una iglesia Bautista Independiente. Cantamos himnos tradicionales y predicamos exclusivamente de la Biblia Reina-Valera 1960, creyendo que es la Palabra de Dios. No somos contemporáneos en nuestra adoración. Nos esforzamos por ser un faro que proclame el Evangelio de Jesucristo tanto localmente como en el extranjero."}
-          </div>
-        </Reveal>
-
-        <Reveal direction="up" delay={0.15}>
+      <section className="home-section home-welcome" aria-labelledby="welcome-title">
+        <Reveal direction="up">
+          <p className="script-eyebrow">{copy.welcome}</p>
+          <h1 className="display-title" id="welcome-title">
+            Iglesia Templo Bautista
+          </h1>
+          <p className="home-intro">{copy.intro}</p>
           <button
-            className="home-action doctrine-action"
+            className="primary-button doctrine-action"
             onClick={() => navigate("/about")}
-            style={{
-              marginTop: "2rem",
-              backgroundColor: "#18243a",
-              color: "white",
-              border: "none",
-              borderRadius: "8px",
-              fontWeight: "bold",
-              fontFamily: "Trebuchet MS",
-              cursor: "pointer",
-              transition: "background-color 0.3s ease",
-            }}
           >
-            {lang === "en" ? "Our Doctrine" : "Nuestra Doctrina"}
+            {copy.doctrine}
           </button>
         </Reveal>
+      </section>
 
-        <Reveal direction="left" delay={0.1}>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "flex-start",
-              marginTop: "2rem",
-              justifyContent: "center",
-              gap: "1rem",
-              marginBottom: "1.5rem",
-              flexWrap: "wrap",
-            }}
-          >
-            <img
-              src={clockImg}
-              alt=""
-              width="200"
-              height="200"
-              loading="lazy"
-              decoding="async"
-              style={{ width: "200px", height: "200px" }}
-            />
-
-            <div
-              className="home-info-copy"
-              style={{
-                textAlign: "left",
-                color: "#18243a",
-                fontFamily: "Trebuchet MS",
-              }}
-            >
-              <div className="home-info-heading" style={{ fontWeight: "bold" }}>
-                {lang === "en" ? "Service Hours:" : "Horas de Servicio:"}
-              </div>
-              <div style={{ marginTop: ".01rem" }}>
-                <strong>{lang === "en" ? "Sunday" : "Domingo"}</strong>
-                <div>
-                  {lang === "en" ? "Sunday School" : "Escuela Dominical"} - 10:00am
-                </div>
-                <div>
-                  {lang === "en" ? "Sunday Morning" : "Predicación"} - 11:00am
-                </div>
-                <div>
-                  {lang === "en" ? "Evening Service" : "Predicación"} - 6:00pm
-                </div>
-              </div>
-              <div style={{ marginTop: "1rem" }}>
-                <strong>{lang === "en" ? "Wednesday" : "Miércoles"}</strong>
-                <div>
-                  {lang === "en" ? "Bible Study" : "Estudio Bíblico"} - 6:00pm
-                </div>
-              </div>
-              <div style={{ marginTop: "1rem" }}>
-                <strong>{lang === "en" ? "Thursday" : "Jueves"}</strong>
-                <div>{lang === "en" ? "Prayer Meeting" : "Oración"} - 6:00pm</div>
-              </div>
-              <div style={{ marginTop: "1rem" }}>
-                <strong>{lang === "en" ? "Saturday" : "Sábado"}</strong>
-                <div>
-                  {lang === "en" ? "Youth Group" : "Reunión de Jóvenes"} - 5:00pm
-                </div>
-              </div>
-            </div>
-          </div>
+      <section className="home-section visit-section" aria-labelledby="visit-title">
+        <Reveal direction="up">
+          <header className="section-heading">
+            <p className="section-eyebrow">{copy.visitEyebrow}</p>
+            <h2 id="visit-title">{copy.visitTitle}</h2>
+          </header>
         </Reveal>
 
-        <Reveal direction="right" delay={0.1}>
-          <div style={{ marginTop: "2rem" }}>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "1rem",
-                marginBottom: "1.5rem",
-                flexWrap: "wrap",
-              }}
-            >
-              <img
-                src={locationImg}
-                alt=""
-                width="200"
-                height="200"
-                loading="lazy"
-                decoding="async"
-                style={{ width: "200px", height: "200px" }}
-              />
-
-              <div style={{ textAlign: "left" }}>
-                <div
-                  className="home-info-heading"
-                  style={{
-                    fontFamily: "Trebuchet MS",
-                    color: "#18243a",
-                  }}
-                >
-                  <strong>
-                    {lang === "en" ? "Our Location:" : "Nuestra Locación:"}
-                  </strong>
-                </div>
-                <div
-                  className="home-location-text"
-                  style={{
-                    fontFamily: "Trebuchet MS",
-                    color: "#18243a",
-                  }}
-                >
-                  804 S. 14th Ave <br />
-                  Dodge City, KS 67801 <br />
-                  620-255-3740
-                </div>
+        <div className="visit-grid">
+          <Reveal direction="left" delay={0.05}>
+            <article className="info-card service-card">
+              <div className="info-card-header">
+                <img
+                  className="info-icon"
+                  src={clockImg}
+                  alt=""
+                  width="120"
+                  height="120"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <h3>{copy.serviceTitle}</h3>
               </div>
-            </div>
 
-            <div style={{ marginTop: "3rem" }}>
+              <div className="service-list">
+                {copy.services.map((service) => (
+                  <div className="service-day" key={service.day}>
+                    <strong>{service.day}</strong>
+                    {service.times.map((time) => (
+                      <span key={time}>{time}</span>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </article>
+          </Reveal>
+
+          <Reveal direction="right" delay={0.05}>
+            <article className="info-card location-card">
+              <div className="info-card-header">
+                <img
+                  className="info-icon"
+                  src={locationImg}
+                  alt=""
+                  width="120"
+                  height="120"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <h3>{copy.locationTitle}</h3>
+              </div>
+
+              <address className="location-address">
+                804 S. 14th Ave
+                <br />
+                Dodge City, KS 67801
+                <br />
+                <a href="tel:+16202553740">620-255-3740</a>
+              </address>
+
               <a
-                className="button home-action map-action"
+                className="primary-button compact-button"
                 target="_blank"
                 href="https://maps.app.goo.gl/vbZVNoeWtNqApurL6"
                 rel="noreferrer"
-                style={{
-                  marginTop: "2rem",
-                  marginBottom: "2rem",
-                  backgroundColor: "#18243a",
-                  color: "white",
-                  border: "none",
-                  borderRadius: "8px",
-                  fontWeight: "bold",
-                  fontFamily: "Trebuchet MS",
-                  cursor: "pointer",
-                  transition: "background-color 0.3s ease",
-                  textDecoration: "none",
-                }}
               >
-                <strong>
-                  {lang === "en" ? "Open in Maps" : "Abrir en Mapas"}
-                </strong>
+                {copy.maps}
               </a>
-            </div>
+            </article>
+          </Reveal>
+        </div>
 
-            <div
-              style={{
-                width: "100%",
-                maxWidth: "800px",
-                margin: "0 auto",
-                marginTop: "2rem",
-              }}
-            >
-              <iframe
-                className="map-frame"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3155.2358373031066!2d-100.03247139999999!3d37.737611099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87a71b211d5a52f5%3A0x82f74e9bb358df0d!2sIglesia%20templo%20Bautista%20fundamental%20Independiente!5e0!3m2!1sen!2sus!4v1774971327023!5m2!1sen!2sus"
-                style={{
-                  width: "100%",
-                  height: "400px",
-                  border: "5px solid #18243a",
-                  borderRadius: "8px",
-                }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Iglesia Templo Bautista"
-              />
-            </div>
+        <Reveal direction="up" delay={0.05}>
+          <div className="map-shell">
+            <iframe
+              className="map-frame"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3155.2358373031066!2d-100.03247139999999!3d37.737611099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87a71b211d5a52f5%3A0x82f74e9bb358df0d!2sIglesia%20templo%20Bautista%20fundamental%20Independiente!5e0!3m2!1sen!2sus!4v1774971327023!5m2!1sen!2sus"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Iglesia Templo Bautista"
+            />
           </div>
         </Reveal>
-      </div>
+      </section>
 
-      <Reveal direction="up" delay={0.1}>
-        <div
-          className="gallery-strip"
-          aria-label={
-            lang === "en"
-              ? "Church photo gallery"
-              : "Galería de fotos de la iglesia"
-          }
-          role="region"
-          tabIndex="0"
-          style={{
-            overflowX: "auto",
-            whiteSpace: "nowrap",
-            padding: "1rem",
-            marginTop: "2rem",
-          }}
-        >
-          {galleryImages.map((image) => (
-            <img
-              key={image.large}
-              className="gallery-image"
-              src={image.small}
-              srcSet={`${image.small} 640w, ${image.large} 1200w`}
-              sizes="(max-width: 600px) 85vw, 500px"
-              alt={image.alt}
-              width="1200"
-              height="900"
-              loading="lazy"
-              decoding="async"
-              fetchPriority="low"
-              style={{
-                objectFit: "cover",
-                borderRadius: "8px",
-                marginRight: "1rem",
-                display: "inline-block",
-              }}
-            />
-          ))}
-        </div>
-      </Reveal>
+      <section className="home-section gallery-section" aria-labelledby="gallery-title">
+        <Reveal direction="up">
+          <header className="section-heading">
+            <p className="section-eyebrow">{copy.galleryEyebrow}</p>
+            <h2 id="gallery-title">{copy.galleryTitle}</h2>
+            <p>{copy.galleryIntro}</p>
+            <span className="gallery-hint">{copy.galleryHint}</span>
+          </header>
+        </Reveal>
+
+        <Reveal direction="up" delay={0.05}>
+          <div
+            className="gallery-strip"
+            aria-label={copy.galleryTitle}
+            role="region"
+            tabIndex="0"
+          >
+            {galleryImages.map((image) => (
+              <figure className="gallery-item" key={image.large}>
+                <img
+                  className="gallery-image"
+                  src={image.small}
+                  srcSet={`${image.small} 640w, ${image.large} 1200w`}
+                  sizes="(max-width: 700px) 84vw, (max-width: 1100px) 46vw, 31vw"
+                  alt={image.alt}
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
+                />
+              </figure>
+            ))}
+          </div>
+        </Reveal>
+      </section>
     </main>
   );
 }

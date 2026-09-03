@@ -28,7 +28,7 @@ export default function Reveal({
           observer.disconnect();
         }
       },
-      { threshold: 0.2 },
+      { rootMargin: "0px 0px -8%", threshold: 0.12 },
     );
 
     observer.observe(element);

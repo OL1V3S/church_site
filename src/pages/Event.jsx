@@ -1,137 +1,203 @@
-import calendarImg from "../assets/calendar.png"; // adjust path if needed
+import calendarImg from "../assets/calendar.png";
+
+const events = [
+  {
+    startDate: "2026-01-18",
+    endDate: "2026-01-18",
+    en: { month: "January", date: "January 18", title: "Ministry Fair" },
+    es: { month: "Enero", date: "Enero 18", title: "Feria de Ministerios" },
+  },
+  {
+    startDate: "2026-02-14",
+    endDate: "2026-02-14",
+    en: { month: "February", date: "February 14", title: "Couples' Get-together" },
+    es: { month: "Febrero", date: "Febrero 14", title: "Convivio de Parejas" },
+  },
+  {
+    startDate: "2026-03-02",
+    endDate: "2026-03-06",
+    en: { month: "March", date: "March 2–6", title: "Revival Conference in Honduras" },
+    es: { month: "Marzo", date: "Marzo 2–6", title: "Conferencia de Avivamiento en Honduras" },
+  },
+  {
+    startDate: "2026-03-07",
+    endDate: "2026-03-08",
+    en: {
+      month: "March",
+      date: "March 7–8",
+      title: "Primera Iglesia Bautista Fundamental de Wichita's Anniversary",
+    },
+    es: {
+      month: "Marzo",
+      date: "Marzo 7–8",
+      title: "Aniversario de Primera Iglesia Bautista Fundamental de Wichita",
+    },
+  },
+  {
+    startDate: "2026-03-19",
+    endDate: "2026-03-21",
+    en: { month: "March", date: "March 19–21", title: "Family Conference in Lewisville, TX" },
+    es: { month: "Marzo", date: "Marzo 19–21", title: "Conferencia de Familia en Lewisville, TX" },
+  },
+  {
+    startDate: "2026-04-10",
+    endDate: "2026-04-11",
+    en: { month: "April", date: "April 10–11", title: "Revival Conference in California" },
+    es: { month: "Abril", date: "Abril 10–11", title: "Conferencia de Avivamiento en California" },
+  },
+  {
+    startDate: "2026-04-18",
+    endDate: "2026-04-19",
+    en: { month: "April", date: "April 18–19", title: "Church's 25th Anniversary" },
+    es: { month: "Abril", date: "Abril 18–19", title: "Vigésimo Quinto Aniversario de la Iglesia" },
+  },
+  {
+    startDate: "2026-05-10",
+    endDate: "2026-05-10",
+    en: { month: "May", date: "May 10", title: "Mother's Day" },
+    es: { month: "Mayo", date: "Mayo 10", title: "Día de las Madres" },
+  },
+  {
+    startDate: "2026-05-17",
+    endDate: "2026-05-17",
+    en: { month: "May", date: "May 17", title: "Cowboy Day" },
+    es: { month: "Mayo", date: "Mayo 17", title: "Día del Vaquero" },
+  },
+  {
+    startDate: "2026-06-04",
+    endDate: "2026-06-06",
+    en: { month: "June", date: "June 4–6", title: "Couples Retreat" },
+    es: { month: "Junio", date: "Junio 4–6", title: "Retiro de Parejas" },
+  },
+  {
+    startDate: "2026-06-21",
+    endDate: "2026-06-21",
+    en: { month: "June", date: "June 21", title: "Father's Day" },
+    es: { month: "Junio", date: "Junio 21", title: "Día de los Padres" },
+  },
+  {
+    startDate: "2026-06-22",
+    endDate: "2026-06-26",
+    en: { month: "June", date: "June 22–26", title: "Vacation Bible School" },
+    es: { month: "Junio", date: "Junio 22–26", title: "Escuela Bíblica de Vacaciones" },
+  },
+  {
+    startDate: "2026-07-04",
+    endDate: "2026-07-04",
+    en: { month: "July", date: "July 4", title: "Hyles-Anderson College Tour Group" },
+    es: { month: "Julio", date: "Julio 4", title: "Grupo Turístico de Hyles-Anderson College" },
+  },
+  {
+    startDate: "2026-07-16",
+    endDate: "2026-07-18",
+    en: { month: "July", date: "July 16–18", title: "Family Conference" },
+    es: { month: "Julio", date: "Julio 16–18", title: "Conferencia de Familia" },
+  },
+  {
+    startDate: "2026-08-14",
+    endDate: "2026-08-16",
+    en: { month: "August", date: "August 14–16", title: "Missions Conference" },
+    es: { month: "Agosto", date: "Agosto 14–16", title: "Conferencia Misionera" },
+  },
+  {
+    startDate: "2026-09-13",
+    endDate: "2026-09-20",
+    en: { month: "September", date: "September 13 & 20", title: "Outreach Competition" },
+    es: { month: "Septiembre", date: "Septiembre 13 y 20", title: "Competencia de Rutas" },
+  },
+  {
+    startDate: "2026-11-25",
+    endDate: "2026-11-25",
+    en: { month: "November", date: "November 25", title: "Thanksgiving Service" },
+    es: { month: "Noviembre", date: "Noviembre 25", title: "Servicio de Acción de Gracias" },
+  },
+];
+
+function EventCard({ event, lang }) {
+  const copy = event[lang] || event.en;
+
+  return (
+    <article className="event-card">
+      <div className="event-month">{copy.month}</div>
+      <div>
+        <time className="event-date" dateTime={event.startDate}>
+          {copy.date}, 2026
+        </time>
+        <h3>{copy.title}</h3>
+      </div>
+    </article>
+  );
+}
 
 export default function Event({ lang }) {
   const content = {
-    en: { title: "Upcoming Church Events" },
-    es: { title: "Próximos Eventos" },
+    en: {
+      eyebrow: "2026 Church Calendar",
+      title: "Upcoming Church Events",
+      intro: "Save the date and join us for these upcoming services and gatherings.",
+      upcoming: "Coming Up",
+      earlier: "Earlier in 2026",
+      noUpcoming: "There are no remaining events on the published 2026 calendar.",
+    },
+    es: {
+      eyebrow: "Calendario de la Iglesia 2026",
+      title: "Próximos Eventos",
+      intro: "Aparta la fecha y acompáñanos en estos próximos servicios y reuniones.",
+      upcoming: "Próximamente",
+      earlier: "Eventos Anteriores de 2026",
+      noUpcoming: "No quedan eventos en el calendario publicado de 2026.",
+    },
   };
 
-  return (
-    <div className="page">
-      {/* Title */}
-      <div
-        style={{
-          textAlign: "center",
-          marginBottom: "1.5rem",
-          color: "#18243a",
-          fontFamily: "American Typewriter",
-          fontSize: "3rem",
-          fontWeight: "bold",
-        }}
-      >
-        {content[lang].title}
-      </div>
+  const copy = content[lang] || content.en;
+  const now = new Date();
+  const upcomingEvents = events.filter(
+    (event) => new Date(`${event.endDate}T23:59:59`) >= now,
+  );
+  const pastEvents = events.filter(
+    (event) => new Date(`${event.endDate}T23:59:59`) < now,
+  );
 
-      {/* Calendar image */}
-      <div style={{ textAlign: "center", marginBottom: "1rem" }}>
+  return (
+    <div className="events-page">
+      <header className="page-header events-header">
         <img
           src={calendarImg}
-          alt="Church Calendar"
-          width="250"
-          height="250"
+          alt=""
+          width="112"
+          height="112"
           decoding="async"
-          style={{
-            width: "250px",
-            height: "250px",
-            objectFit: "cover",
-            padding: "1rem",
-          }}
         />
-      </div>
-
-      {/* Event schedule */}
-      <div
-        style={{
-          textAlign: "center",
-          color: "#18243a",
-          fontFamily: "Trebuchet MS",
-          fontSize: "1.5rem",
-          lineHeight: "1.8",
-          maxWidth: "800px",
-          margin: "0 auto",
-        }}
-      >
-
         <div>
-          <strong>{lang === "en" ? "January" : "Enero"}</strong>
-          <div>{lang === "en" ? "Ministry Fair: January 18" : "Feria de Ministerios: Enero 18"}</div>
+          <p className="section-eyebrow">{copy.eyebrow}</p>
+          <h1>{copy.title}</h1>
+          <p>{copy.intro}</p>
         </div>
+      </header>
 
-        <div>
-          <strong>{lang === "en" ? "February" : "Febrero"}</strong>
-          <div>{lang === "en" ? "Couples' Get-together: February 14" : "Convivio de Parejas: Febrero 14"}</div>
-        </div>
+      <section className="events-section" aria-labelledby="upcoming-events-title">
+        <h2 id="upcoming-events-title">{copy.upcoming}</h2>
+        {upcomingEvents.length > 0 ? (
+          <div className="event-grid">
+            {upcomingEvents.map((event) => (
+              <EventCard event={event} lang={lang} key={event.startDate} />
+            ))}
+          </div>
+        ) : (
+          <p className="empty-events">{copy.noUpcoming}</p>
+        )}
+      </section>
 
-        <div>
-          <strong>{lang === "en" ? "March" : "Marzo"}</strong>
-          <div>{lang === "en" ? "Revival Conference in Honduras: March 2-6" : "Conferencia de Avivamiento en Honduras: Marzo 2-6"}</div>
-          <div>{lang === "en" ? "Primera Iglesia Bautista Fundamental de Wichita's Anniversary: March 7-8" : "Aniversario de Primera Iglesia Bautista Fundamental de Wichita: Marzo 7-8"}</div>
-          <div>{lang === "en" ? "Family Conference in Lewisville, TX: March 19-21" : "Conferencia de Familia en Lewisville, TX: Marzo 19-21"}</div>
-        </div>
-
-        <div>
-          <strong>{lang === "en" ? "April" : "Abril"}</strong>
-          <div>{lang === "en" ? "Revival Conference in California: April 10-11" : "Conferencia de Avivamiento en California: Abril 10-11"}</div>
-          <div>{lang === "en" ? "Church's 25th Anniversary: April 18-19" : "Vigesimo Quinto Aniversario de la Iglesia: Abril 18-19"}</div>
-        </div>
-
-        <div>
-          <strong>{lang === "en" ? "May" : "Mayo"}</strong>
-          <div>{lang === "en" ? "Mother's Day: May 10" : "Dia de las Madres: Mayo 10"}</div>
-          <div>{lang === "en" ? "Cowboy Day: May 17" : "Dia del Vaquero: Mayo 17"}</div>
-        </div>
-
-        <div>
-          <strong>{lang === "en" ? "June" : "Junio"}</strong>
-          <div>{lang === "en" ? "Couples Retreat: June 4-6" : "Retiro de Parejas: Junio 4-6"}</div>
-          <div>{lang === "en" ? "Father's Day: June 21" : "Dia de los Padres: Junio 21"}</div>
-          <div>{lang === "en" ? "Vacation Bible School: June 22-26" : "Escuela Bíblica de Vacaciones: Junio 22-26"}</div>
-        </div>
-
-        <div style={{ marginTop: "1rem" }}>
-          <strong>{lang === "en" ? "July" : "Julio"}</strong>
-          <div>{lang === "en" ? "Hyles-Anderson College Tour Group: July 4" : "Hyles-Anderson College Grupo Turistico: Julio 4"}</div>
-          <div>{lang === "en" ? "Family Conference: July 16-18" : "Conferencia de Familia: Julio 16-18"}</div>
-        </div>
-
-        <div style={{ marginTop: "1rem" }}>
-          <strong>{lang === "en" ? "August" : "Agosto"}</strong>
-          <div>{lang === "en" ? "Missions Conferece: August 14-16" : "Conferencia Misionera: Agosto 14-16"}</div>
-        </div>
-
-        <div style={{ marginTop: "1rem" }}>
-          <strong>{lang === "en" ? "September" : "Septiembre"}</strong>
-          <div>{lang === "en" ? "Outreach Competition: September 13, 20" : "Competencia de Rutas: Septiembre 13, 20"}</div>
-        </div>
-
-      {/*
-
-        <div>
-          <strong>{lang === "en" ? "October" : "Octubre"}</strong>
-          <div>{lang === "en" ? "Cesia's XV: October 25" : "Quinceañera de Cesia: Octubre 25"}</div>
-        </div>
-
-      */}
-
-        <div style={{ marginTop: "1rem" }}>
-          <strong>{lang === "en" ? "November" : "Noviembre"}</strong>
-          <div>{lang === "en" ? "Thanksgiving Service: November 25" : "Servicio de Accion de Gracias: Noviembre 25"}</div>
-        </div>
-
-      {/*
-
-        <div style={{ marginTop: "1rem" }}>
-          <strong>{lang === "en" ? "December" : "Diciembre"}</strong>
-          <div>{lang === "en" ? "Men's Banquet: December 13" : "Banquete de Hombres: Diciembre 13"}</div>
-          <div>{lang === "en" ? "Teen Banquet: December 19" : "Banquete Juvenil: Diciembre 19"}</div>
-          <div>{lang === "en" ? "Women's Banquet: December 20" : "Banquete de Mujeres: Diciembre 20"}</div>
-          <div>{lang === "en" ? "Christmas Service: December 21" : "Servicio Navideño: Diciembre 21"}</div>
-          <div>{lang === "en" ? "New Year's Service: December 31" : "Servicio de Año Nuevo: Diciembre 31"}</div>
-        </div>
-
-      */}
-
-      </div>
+      {pastEvents.length > 0 && (
+        <details className="past-events">
+          <summary>{copy.earlier}</summary>
+          <div className="event-grid">
+            {pastEvents.map((event) => (
+              <EventCard event={event} lang={lang} key={event.startDate} />
+            ))}
+          </div>
+        </details>
+      )}
     </div>
   );
 }

@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function About({ lang }) {
   const content = {
     en: {
@@ -23,43 +21,21 @@ export default function About({ lang }) {
   };
 
   return (
-    <div
-      style={{
-        maxWidth: "800px",
-        margin: "2rem auto",
-        padding: "2rem",
-        backgroundColor: "#DaDaDa",
-        borderRadius: "12px",
-        textAlign: "center"
-      }}
-    >
-      {/* Title */}
-      <div
-        style={{
-          marginBottom: "1.5rem",
-          color: "#18243a",
-          fontFamily: "American Typewriter",
-          fontSize: "2.5rem",
-          fontWeight: "bold"
-        }}
-      >
+    <article className="about-card">
+      <header className="page-header about-header">
+        <p className="section-eyebrow">
+          {lang === "en" ? "Our Faith" : "Nuestra Fe"}
+        </p>
+        <h1>
         {content[lang].title}
-      </div>
+        </h1>
+      </header>
 
-      {/* Paragraphs */}
-      <div
-        style={{
-          color: "#18243a",
-          fontFamily: "Trebuchet MS",
-          fontSize: "1.3rem",
-          lineHeight: "1.8",
-          textAlign: "left"
-        }}
-      >
+      <div className="about-copy">
         {content[lang].paragraphs.map((text, idx) => (
-          <p key={idx} style={{ marginBottom: "1.2rem" }}>{text}</p>
+          <p key={idx}>{text}</p>
         ))}
       </div>
-    </div>
+    </article>
   );
 }
